@@ -25,7 +25,6 @@ install-tmux:
 	cp -r tmux ~/.config/
 install-vim:
 	cp -r vim ~/.config/
-	cp vim/vimrc ~/.vimrc
 install-nvim: install-vim
 	cp -r nvim ~/.config/
 install-git:
