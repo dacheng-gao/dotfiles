@@ -48,7 +48,7 @@ set backupcopy=yes
 set fillchars+=vert:┃
 set viewoptions=options,cursor,unix,slash
 set cursorline
-set colorcolumn=120
+"set colorcolumn=120
 
 " listchars {{{
 "set listchars=eol:$,tab:>-,trail:~,space:␣
