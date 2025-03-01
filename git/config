@@ -40,5 +40,7 @@
     procReceiveRefs = refs/for
 [gc]
     writeCommitGraph = true
+[include]
+    path = ~/.config/git/config.local
 [includeIf "gitdir:~/Repos/xxx/"]
     path = ~/.config/git/config.xxx
