@@ -29,10 +29,7 @@ install-vim:
 install-nvim: install-vim
 	cp -r nvim ~/.config/
 install-git:
-	cp .gitconfig ~
-	cp .gitconfig.xxx ~
-	cp .gitignore.global ~
-	cp .gitignore.xxx ~
+	cp git/* ~/.config/git
 install-bin:
 	cp -rp bin/* ~/bin
 install-alacritty:

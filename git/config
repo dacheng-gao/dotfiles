@@ -11,7 +11,7 @@
     editor = nvim
     quotePath = false
     commitGraph = true
-    excludesfile = ~/.gitignore.global
+    excludesfile = ~/.config/git/ignore
 [init]
     templatedir =
     defaultBranch = master
@@ -41,4 +41,4 @@
 [gc]
     writeCommitGraph = true
 [includeIf "gitdir:~/Repos/xxx/"]
-    path = ~/.gitconfig.xxx
+    path = ~/.config/git/config.xxx
