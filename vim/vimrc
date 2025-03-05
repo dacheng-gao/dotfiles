@@ -1,14 +1,12 @@
 " Setup Plug {{{
 call plug#begin('~/.config/vim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'rafi/awesome-vim-colorschemes'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-sort-motion'
 Plug 'alvan/vim-closetag'
-Plug 'editorconfig/editorconfig-vim' "need editorconfig-core to be installed
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all', 'on': ['Files', 'Buffers', 'GFiles', 'Windows', 'Commits'] }
 Plug 'junegunn/fzf.vim', { 'on': ['Files', 'Buffers', 'GFiles', 'Windows', 'Commits'] }
@@ -209,7 +207,7 @@ nnoremap td :tabclose<CR>
 " Theme {{{
 syntax enable
 set background=light
-colorscheme carbonized-light
+colorscheme default
 " }}}
 
 " Custom Functions {{{
