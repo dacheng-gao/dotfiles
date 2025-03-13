@@ -12,6 +12,7 @@
     quotePath = false
     commitGraph = true
     excludesfile = ~/.config/git/ignore
+	pager = diff-so-fancy | less --tabs=4 -RF
 [init]
     templatedir =
     defaultBranch = master
@@ -44,3 +45,7 @@
     path = ~/.config/git/config.local
 [includeIf "gitdir:~/Repos/xxx/"]
     path = ~/.config/git/config.xxx
+[fetch]
+	prune = true
+[interactive]
+	diffFilter = diff-so-fancy --patch
