@@ -1,12 +1,13 @@
 " Setup Plug {{{
 call plug#begin('~/.config/vim/plugged')
+Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sensible'
-Plug 'itchyny/lightline.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-surround'
-Plug 'christoomey/vim-sort-motion'
+Plug 'itchyny/lightline.vim'
+Plug 'bronson/vim-trailing-whitespace'
 Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
+Plug 'christoomey/vim-sort-motion'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all', 'on': ['Files', 'Buffers', 'GFiles', 'Windows', 'Commits'] }
 Plug 'junegunn/fzf.vim', { 'on': ['Files', 'Buffers', 'GFiles', 'Windows', 'Commits'] }
@@ -206,8 +207,10 @@ nnoremap td :tabclose<CR>
 
 " Theme {{{
 syntax enable
-set background=light
+colorscheme delek
+colorscheme seoul256
 colorscheme default
+set background=light
 " }}}
 
 " Custom Functions {{{
