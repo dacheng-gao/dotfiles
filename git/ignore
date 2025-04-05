@@ -1,8 +1,19 @@
-# JetBrains IDE config directory per project
-.idea
+# JetBrains IDE
+.idea/
 
 # Visual Studio Code
-.vscode
+.vscode/
 
 # compiledb
 compile_commands.json
+
+# zig
+.zig-cache/
+zig-out/
+Zig.iml
+
+# rust
+target/
+
+# cmake
+cmake-build-debug/
