@@ -1,3 +1,6 @@
+# macOS
+.DS_Store
+
 # JetBrains IDE
 .idea/
 
@@ -6,6 +9,11 @@
 
 # compiledb
 compile_commands.json
+
+# dotnet
+bin/
+obj/
+Folder.DotSettings.user
 
 # zig
 .zig-cache/
@@ -17,3 +25,4 @@ target/
 
 # cmake
 cmake-build-debug/
+build/
