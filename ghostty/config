@@ -1,9 +1,13 @@
-font-family = Menlo
-font-size = 14
+window-theme=light
 window-width = 9999
 window-height = 9999
+font-family = Menlo
+font-size = 14
+font-thicken = false
 quit-after-last-window-closed = true
+shell-integration-features = false
 cursor-style = block
+cursor-style-blink = false
 palette = 0=#000000
 palette = 1=#CC0000
 palette = 2=#4E9A06
@@ -20,9 +24,9 @@ palette = 12=#729FCF
 palette = 13=#AD7FA8
 palette = 14=#34E2E2
 palette = 15=#EEEEEC
-background = 000000
-foreground = ffffff
-cursor-color = D3D7CF
-cursor-text = 000000
+background = ffffff
+foreground = 000000
+cursor-color = 000000
+cursor-text = D3D7CF
 selection-background = 626880
 selection-foreground = c6d0f5
