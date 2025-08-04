@@ -1,6 +1,6 @@
 # a zsh theme (c) dacheng
 
-PROMPT="%n@%m %c %{$fg_bold[black]%}%(?:%1{$%}:%{$fg[red]%}%1{$%})%{$reset_color%} "
+PROMPT="%{$fg_bold[black]%}%n@%m %c %(?:%1{$%}:%{$fg[red]%}%1{$%})%{$reset_color%} "
 
 # Variables supported in PROMPT:
 # %c: just current directory
