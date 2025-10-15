@@ -99,17 +99,20 @@ if [[ -d /opt/jaeger ]]; then
   export PATH=/opt/jaeger:$PATH
 fi
 
-# Overwrite default install for macOS
+# Overwrite default install for macOS (Intel chip)
 if [[ `uname -s` = 'Darwin' ]]; then
-  if [[ -d /usr/local/opt/curl ]]; then
-    export PATH=/usr/local/opt/curl/bin:$PATH
-  fi
   if [[ -d /usr/local/opt/bison ]]; then
     export PATH=/usr/local/opt/bison/bin:$PATH
+  fi
+  if [[ -d /usr/local/opt/curl ]]; then
+    export PATH=/usr/local/opt/curl/bin:$PATH
   fi
   if [[ -d /usr/local/opt/openjdk ]]; then
     export JAVA_HOME=/usr/local/opt/openjdk
     export PATH=$JAVA_HOME/bin:$PATH
+  fi
+  if [[ -d /usr/local/opt/ruby ]]; then
+    export PATH=/usr/local/opt/ruby/bin:$PATH
   fi
 fi
 
