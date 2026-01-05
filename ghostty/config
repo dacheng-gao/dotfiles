@@ -5,6 +5,7 @@ window-height = 9999
 font-family = Menlo
 font-size = 14
 font-thicken = false
+adjust-cell-height = 10%
 quit-after-last-window-closed = true
 shell-integration-features = false
 cursor-style = block

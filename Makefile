@@ -8,6 +8,7 @@ help:
 	@echo "  make install-git"
 	@echo "  make install-bin"
 	@echo "  make install-alacritty"
+	@echo "  make install-ghostty"
 	@echo "  make install-rio"
 	@echo "  make install-rofi"
 	@echo "  make install-sway"
@@ -33,6 +34,8 @@ install-bin:
 	cp -rp bin/* ~/bin
 install-alacritty:
 	cp -r alacritty ~/.config
+install-ghostty:
+	cp -r ghostty ~/.config
 install-rio:
 	cp -r rio ~/.config
 install-rofi:
