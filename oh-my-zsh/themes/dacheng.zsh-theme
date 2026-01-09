@@ -1,6 +1,8 @@
 # a zsh theme (c) dacheng
 
-PROMPT="%{$fg_bold[green]%}[%n@%m:%c]%(?:%1{$%}:%{$fg[red]%}%1{$%})%{$reset_color%} "
+# emojis: 💲🔘🔴🟠🟡🟢
+# colors: %{$fg_bold[blue]%}%c%{$reset_color%}
+PROMPT="🔘 %{$fg_bold[black]%}%n@%m %c %(?:%1{$%}:%{$fg[red]%}%1{$%})%{$reset_color%} "
 
 # Variables supported in PROMPT:
 # %c: just current directory
