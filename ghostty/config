@@ -1,5 +1,5 @@
-macos-titlebar-style = tabs
-window-theme=light
+#macos-titlebar-style = tabs
+window-theme = light
 window-width = 9999
 window-height = 9999
 font-family = Menlo
