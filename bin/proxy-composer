@@ -1,4 +1,0 @@
-#!/bin/zsh
-export {http_proxy,https_proxy}=http://127.0.0.1:8888
-export no_proxy=mirrors.aliyun.com
-composer $@
