@@ -1,6 +1,0 @@
-[user]
-    name = XXX XXX
-    email = xxx@xxx.com
-[core]
-    excludesfile = ~/.config/git/ignore.xxx
-    sshCommand = ssh -i ~/.ssh/id_ed25519.xxx -o IdentitiesOnly=yes
