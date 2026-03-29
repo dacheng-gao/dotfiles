@@ -1,0 +1,34 @@
+{
+    "inbounds": [
+        {
+            "port": 8223,
+            "protocol": "socks",
+            "sniffing": {
+                "enabled": true,
+                "destOverride": ["http", "tls"]
+            },
+            "settings": {
+                "auth": "noauth"
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "c22s3.portablesubmarines.com",
+                        "port": 13913,
+                        "users": [
+                            {
+                                "id": "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad",
+                                "alterId": 0
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
