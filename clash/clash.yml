@@ -1,0 +1,43 @@
+# ==================== 全局设置 ====================
+mode: global
+log-level: info
+ipv6: true
+allow-lan: false
+
+# ==================== 代理节点 ====================
+proxies:
+  - name: "tinyproxy"
+    type: http
+    server: 127.0.0.1
+    port: 8888
+
+# ==================== 策略组 ====================
+proxy-groups:
+  - name: "GLOBAL"
+    type: select
+    proxies: ["tinyproxy"]
+
+# ==================== 规则（重点防循环） ====================
+rules:
+  # 1. 本地回环 + 局域网 必须直连（防自循环）
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+
+  # 2. Clash TUN 虚拟 IP 段直连（非常重要！）
+  - IP-CIDR,198.18.0.0/15,DIRECT,no-resolve
+
+  # 3. tinyproxy 和 v2ray 本地端口必须直连（防止循环）
+  - DST-PORT,8888,DIRECT,no-resolve   # tinyproxy
+  - DST-PORT,8223,DIRECT,no-resolve   # v2ray
+  - DST-PORT,8224,DIRECT,no-resolve   # v2ray
+  - DST-PORT,8225,DIRECT,no-resolve   # v2ray
+
+  # 4. 你的真实 v2ray 服务器域名/IP 必须直连（关键！）
+  - DOMAIN-SUFFIX,portablesubmarines.com,DIRECT,no-resolve
+  # 如果你知道服务器的真实 IP，也可以加：
+  # - IP-CIDR,你的服务器真实IP/32,DIRECT,no-resolve
+
+  # 5. 所有其他流量走 GLOBAL
+  - MATCH,GLOBAL
