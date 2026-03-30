@@ -44,6 +44,11 @@ rules:
   # 如果你知道服务器的真实 IP，也可以加：
   # - IP-CIDR,你的服务器真实IP/32,DIRECT,no-resolve
 
+  # 中国大陆网络直连
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOSITE,CN,DIRECT
+  - GEOIP,CN,DIRECT
+
   # MiniMax https://www.minimaxi.com/
   - DOMAIN,api.minimaxi.com,DIRECT,no-resolve
 
