@@ -44,5 +44,8 @@ rules:
   # 如果你知道服务器的真实 IP，也可以加：
   # - IP-CIDR,你的服务器真实IP/32,DIRECT,no-resolve
 
+  # MiniMax https://www.minimaxi.com/
+  - DOMAIN,api.minimaxi.com,DIRECT,no-resolve
+
   # 5. 所有其他流量走 GLOBAL
   - MATCH,GLOBAL
