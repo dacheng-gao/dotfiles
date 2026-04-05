@@ -12,12 +12,12 @@
     quotePath = false
     commitGraph = true
     excludesfile = ~/.config/git/ignore
-	pager = diff-so-fancy | less --tabs=4 -RF
+    pager = diff-so-fancy | less --tabs=4 -RF
 [init]
     templatedir =
     defaultBranch = master
 [commit]
-	gpgsign = false
+    gpgsign = false
 [pull]
     ff = only
 [push]
@@ -25,9 +25,9 @@
 [merge]
     renamelimit = 2415
 [tag]
-	gpgsign = false
+    gpgsign = false
 [gpg]
-	format = openpgp
+    format = openpgp
 [alias]
     s = status --short
     co = checkout
@@ -44,6 +44,6 @@
 [include]
     path = ~/.config/git/config.local
 [fetch]
-	prune = true
+    prune = true
 [interactive]
-	diffFilter = diff-so-fancy --patch
+    diffFilter = diff-so-fancy --patch
