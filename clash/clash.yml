@@ -4,6 +4,38 @@ log-level: info
 ipv6: true
 allow-lan: false
 
+# DNS
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  "enhanced-mode": fake-ip          # or redir-host
+  "fake-ip-range": 198.18.0.1/16
+  "fake-ip-filter":
+    - "*.lan"
+    - "*.local"
+    - "+.miwifi.com"
+  "use-hosts": true
+  "use-system-hosts": true
+  "default-nameserver":             # 仅用于引导 DoH/DoT 域名解析，纯 IP 即可
+    - 119.29.29.29
+    - 8.8.8.8
+  nameserver:                        # 国内 DNS — 解析国内域名
+    - https://doh.pub/dns-query      # DNSPod DoH (119.29.29.29)
+    - 119.29.29.29
+  fallback:                          # 国外 DNS — 解析国外域名
+    - tls://8.8.8.8:853              # Google DoT
+    - tls://1.1.1.1:853              # Cloudflare DoT
+  "fallback-filter":                 # nameserver 返回非中国 IP 时，采用 fallback 结果
+    geoip: true
+    "geoip-code": CN
+    ipcidr:
+      - 240.0.0.0/4                  # 保留地址段，视为污染
+  "nameserver-policy":
+    "geosite:cn":                    # 国内域名强制走 119
+      - https://doh.pub/dns-query
+      - 119.29.29.29
+
 # ==================== 代理节点 ====================
 proxies:
   - name: "tinyproxy"
