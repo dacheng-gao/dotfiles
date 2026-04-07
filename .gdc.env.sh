@@ -63,6 +63,11 @@ if [[ -d $HOME/flutter ]]; then
   export PATH=$HOME/flutter/bin:$PATH
 fi
 
+# Add Dart pub global tools (patrol_cli, etc.)
+if [[ -d $HOME/.pub-cache/bin ]]; then
+  export PATH=$HOME/.pub-cache/bin:$PATH
+fi
+
 # Add go for /usr/local
 if [[ -d /usr/local/go/bin ]]; then
   export GO_HOME=/usr/local/go
