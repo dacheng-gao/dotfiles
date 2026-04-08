@@ -1,15 +1,10 @@
-macos-titlebar-style = tabs
 window-save-state = always
 window-step-resize = true
-window-inherit-working-directory = true
-window-inherit-font-size = true
-tab-inherit-working-directory = true
-split-inherit-working-directory = true
 font-family = "Iosevka Fixed"
 font-feature = -calt, -liga, -dlig
 font-size = 14
 window-padding-x = 5
-window-padding-y = 3
+window-padding-y = 0
 window-padding-balance = true
 scrollback-limit = 67108864
 quit-after-last-window-closed = true
