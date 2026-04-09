@@ -88,6 +88,9 @@ rules:
   - DOMAIN,weareworldteam.1password.com,DIRECT # 1password
   - DOMAIN,ai.arcadedevhouse.com,DIRECT,no-resolve # sub2api 服务
   - IP-CIDR,34.151.93.112/32,DIRECT,no-resolve # rwa 项目 staging 环境访问地址
+  - IP-CIDR,35.213.251.225/32,DIRECT,no-resolve # rwa production web server
+  - IP-CIDR,35.244.114.46/32,DIRECT,no-resolve # rwa production data server
+  - DOMAIN,rwasuite.com,DIRECT,no-resolve # rwa production 环境访问地址
 
   # 5. 所有其他流量走 GLOBAL
   - MATCH,GLOBAL
