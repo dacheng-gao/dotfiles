@@ -1,10 +1,11 @@
+macos-titlebar-style = native
 window-save-state = always
 window-step-resize = true
 font-family = "Iosevka Fixed"
 font-feature = -calt, -liga, -dlig
 font-size = 14
-window-padding-x = 5
-window-padding-y = 0
+window-padding-x = 3
+window-padding-y = 3
 window-padding-balance = true
 scrollback-limit = 67108864
 quit-after-last-window-closed = true
