@@ -1,5 +1,5 @@
 [user]
-    name = Example User
+    name = User
     email = user@example.com
 [core]
     excludesfile = ~/.config/git/ignore.example

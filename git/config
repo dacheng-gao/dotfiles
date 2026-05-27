@@ -1,6 +1,6 @@
 [user]
-	name = Dacheng Gao
-	email = successgdc@gmail.com
+    name = Dacheng Gao
+    email = successgdc@gmail.com
 [color]
     ui = true
     status = auto
@@ -42,7 +42,7 @@
 [gc]
     writeCommitGraph = true
 [include]
-    path = ~/.config/git/config.local
+    path = ~/.config/git/config.include
 [fetch]
     prune = true
 [interactive]
