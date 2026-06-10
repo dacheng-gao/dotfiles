@@ -8,6 +8,7 @@ help:
 	@echo "  make install-git"
 	@echo "  make install-bin"
 	@echo "  make install-ghostty"
+	@echo "  make install-claude"
 	@echo "  make install-autostart"
 	@echo "  make install-xresource"
 	@echo "  make install-fontconfig"
@@ -37,6 +38,9 @@ install-bin:
 install-ghostty:
 	mkdir -p ~/.config/ghostty
 	cp -p ghostty/config ~/.config/ghostty/
+install-claude:
+	mkdir -p ~/.claude
+	cp -p claude/statusline-command.sh ~/.claude/
 install-autostart:
 	mkdir -p ~/.config/autostart
 	cp -p autostart/* ~/.config/autostart
