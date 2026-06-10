@@ -1,6 +1,7 @@
 window-decoration = auto
 font-family = "Iosevka Fixed"
 font-size = 14
+adjust-cell-height = 10%
 shell-integration = detect
 shell-integration-features = no-cursor,ssh-env,ssh-terminfo,path
 cursor-style = block
