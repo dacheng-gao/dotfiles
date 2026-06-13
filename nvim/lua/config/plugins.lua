@@ -1,7 +1,7 @@
 -- Plugins are managed by the native vim.pack (nvim 0.12+).
 -- Update with :lua vim.pack.update()
 vim.pack.add({
-  "https://github.com/Mofiqul/vscode.nvim",
+  "https://github.com/kepano/flexoki-neovim",
   "https://github.com/lukas-reineke/indent-blankline.nvim",
   "https://github.com/stevearc/oil.nvim",
   "https://github.com/nvim-mini/mini.pick",
@@ -9,9 +9,12 @@ vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 })
 
--- colorscheme; follows vim.o.background (set in config.options)
-require("vscode").setup()
-require("vscode").load()
+-- colorscheme; no setup() needed, pick variant from vim.o.background (set in config.options)
+vim.cmd.colorscheme(vim.o.background == "dark" and "flexoki-dark" or "flexoki-light")
+
+-- line numbers in light grey; current line number stays prominent
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#B7B5AC" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#100F0F", bold = true })
 
 require("oil").setup({
   view_options = {

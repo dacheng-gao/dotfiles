@@ -9,25 +9,4 @@ cursor-style-blink = false
 cursor-click-to-move = true
 mouse-hide-while-typing = true
 
-palette = 0=#212830
-palette = 1=#AF3029
-palette = 2=#66800B
-palette = 3=#AD8301
-palette = 4=#205EA6
-palette = 5=#A02F6F
-palette = 6=#24837B
-palette = 7=#878070
-palette = 8=#646E7A
-palette = 9=#D14D41
-palette = 10=#7E9230
-palette = 11=#B8890A
-palette = 12=#4385BE
-palette = 13=#CE5D97
-palette = 14=#2D9489
-palette = 15=#57504A
-background = F5EFE1
-foreground = 2D343B
-cursor-color = 2D343B
-cursor-text = F5EFE1
-selection-background = D1DDE8
-selection-foreground = 2D343B
+theme = "Flexoki Light"
