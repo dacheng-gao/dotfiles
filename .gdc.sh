@@ -1,16 +1,19 @@
 #!/bin/sh
 
-# Reset system PATH and and other env
-if [[ -f ~/.gdc.env.sh ]]; then
-  source ~/.gdc.env.sh
+# Load environment settings.
+if [ -f "$HOME/.gdc.env.sh" ]; then
+  . "$HOME/.gdc.env.sh"
 fi
 
-# Some handy aliases
-if [[ -f ~/.gdc.alias.sh ]]; then
-  source ~/.gdc.alias.sh
+# Load command aliases.
+if [ -f "$HOME/.gdc.alias.sh" ]; then
+  . "$HOME/.gdc.alias.sh"
 fi
 
-# Make the world colorful
-if [[ -f ~/.gdc.color.sh ]]; then
-  source ~/.gdc.color.sh
+# Load color settings.
+if [ -f "$HOME/.gdc.color.sh" ]; then
+  . "$HOME/.gdc.color.sh"
 fi
+
+# Raise the file descriptor soft limit.
+ulimit -n 65536
