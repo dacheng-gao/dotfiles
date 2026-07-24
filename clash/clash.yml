@@ -1,14 +1,22 @@
 # ==================== 全局设置 ====================
 mode: global
 log-level: info
-ipv6: true
-allow-lan: false
+find-process-mode: strict
+geo-auto-update: true
+geo-update-interval: 24
+ipv6: false
+allow-lan: true
+tcp-concurrent: true
+profile:
+  store-selected: true
+  store-fake-ip: true
 
 # DNS
 dns:
   enable: true
-  listen: :53
-  ipv6: true
+  cache-algorithm: arc
+  listen: 127.0.0.1:53
+  ipv6: false
   "enhanced-mode": fake-ip          # or redir-host
   "fake-ip-range": 198.18.0.1/16
   "fake-ip-filter":
@@ -19,29 +27,20 @@ dns:
   "use-system-hosts": true
   "default-nameserver":             # 仅用于引导 DoH/DoT 域名解析，纯 IP 即可
     - 119.29.29.29
-    - 8.8.8.8
-  nameserver:                        # 国内 DNS — 解析国内域名
-    - https://doh.pub/dns-query      # DNSPod DoH (119.29.29.29)
+    - 223.5.5.5
+  nameserver:                        # 代理流量使用海外 DoH
+    - "https://1.1.1.1/dns-query#GLOBAL"
+    - "https://dns.google/dns-query#GLOBAL"
+  "direct-nameserver":              # 直连流量使用国内 DoH
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  "respect-rules": true
+  "proxy-server-nameserver":
     - 119.29.29.29
-  fallback:                          # 国外 DNS — 解析国外域名
-    - tls://8.8.8.8:853              # Google DoT
-    - tls://1.1.1.1:853              # Cloudflare DoT
-  "fallback-filter":                 # nameserver 返回非中国 IP 时，采用 fallback 结果
-    geoip: true
-    "geoip-code": CN
-    ipcidr:
-      - 240.0.0.0/4                  # 保留地址段，视为污染
-  "nameserver-policy":
-    "geosite:cn":                    # 国内域名强制走 119
-      - https://doh.pub/dns-query
-      - 119.29.29.29
+    - 223.5.5.5
 
 # ==================== 代理节点 ====================
 proxies:
-  - name: "tinyproxy"
-    type: http
-    server: 127.0.0.1
-    port: 8888
   - name: "v2ray"
     type: socks5
     server: 127.0.0.1
@@ -56,22 +55,19 @@ proxy-groups:
 
 # ==================== 规则（重点防循环） ====================
 rules:
-  # 1. 本地回环 + 局域网 必须直连（防自循环）
+  # 1. v2ray 自身出站必须直连（防止被 TUN 再次代理）
+  - PROCESS-NAME,v2ray,DIRECT
+
+  # 2. 本地回环 + 局域网 必须直连（防自循环）
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
   - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
   - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
 
-  # 2. Clash TUN 虚拟 IP 段直连（非常重要！）
+  # 3. Clash TUN 虚拟 IP 段直连（非常重要！）
   - IP-CIDR,198.18.0.0/15,DIRECT,no-resolve
 
-  # 3. tinyproxy 和 v2ray 本地端口必须直连（防止循环）
-  - DST-PORT,8888,DIRECT,no-resolve # tinyproxy
-  - DST-PORT,8223,DIRECT,no-resolve # v2ray
-  - DST-PORT,8224,DIRECT,no-resolve # v2ray
-  - DST-PORT,8225,DIRECT,no-resolve # v2ray
-
-  # 4. 你的真实 v2ray 服务器域名/IP 必须直连（关键！）
+  # 4. v2ray 服务器域名保留为直连兜底
   - DOMAIN-SUFFIX,portablesubmarines.com,DIRECT,no-resolve
   # 如果你知道服务器的真实 IP，也可以加：
   # - IP-CIDR,你的服务器真实IP/32,DIRECT,no-resolve
@@ -81,10 +77,8 @@ rules:
   - GEOSITE,CN,DIRECT
   - GEOIP,CN,DIRECT
 
-  # MiniMax https://www.minimaxi.com/
-  - DOMAIN,api.minimaxi.com,DIRECT,no-resolve
-
   # Halcrow 公司专线直连
+  - IP-CIDR,43.128.21.87/32,DIRECT,no-resolve # 公司海南专线
   - DOMAIN,weareworldteam.1password.com,DIRECT # 1password
   - DOMAIN,ai.arcadedevhouse.com,DIRECT,no-resolve # sub2api 服务
   - IP-CIDR,34.151.93.112/32,DIRECT,no-resolve # rwa 项目 staging 环境访问地址
