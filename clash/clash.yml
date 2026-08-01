@@ -1,5 +1,5 @@
 # ==================== 全局设置 ====================
-mode: global
+mode: rule
 log-level: info
 find-process-mode: strict
 geo-auto-update: true
@@ -23,6 +23,7 @@ dns:
     - "*.lan"
     - "*.local"
     - "+.miwifi.com"
+    - "+.portablesubmarines.com"
   "use-hosts": true
   "use-system-hosts": true
   "default-nameserver":             # 仅用于引导 DoH/DoT 域名解析，纯 IP 即可
@@ -45,18 +46,98 @@ proxies:
     type: socks5
     server: 127.0.0.1
     port: 8224
+  - name: "JMS-607813@c22s1.portablesubmarines.com:8697"
+    type: ss
+    server: "144.34.185.144"
+    port: 8697
+    cipher: "aes-256-gcm"
+    password: "Rr9zCQo2B3aGuALw"
     udp: true
+  - name: "JMS-607813@c22s2.portablesubmarines.com:8697"
+    type: ss
+    server: "104.225.239.197"
+    port: 8697
+    cipher: "aes-256-gcm"
+    password: "Rr9zCQo2B3aGuALw"
+    udp: true
+  - name: "JMS-607813@c22s3.portablesubmarines.com:443"
+    type: vless
+    server: "67.230.171.47"
+    port: 443
+    uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
+  - name: "JMS-607813@c22s4.portablesubmarines.com:443"
+    type: vless
+    server: "23.106.128.132"
+    port: 443
+    uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
+  - name: "JMS-607813@c22s5.portablesubmarines.com:443"
+    type: vless
+    server: "104.245.103.12"
+    port: 443
+    uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
+  - name: "JMS-607813@c22s801.portablesubmarines.com:443"
+    type: vless
+    server: "144.34.169.162"
+    port: 443
+    uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
 
 # ==================== 策略组 ====================
 proxy-groups:
   - name: "GLOBAL"
     type: select
-    proxies: ["v2ray"]
+    proxies:
+      - "JMS-607813@c22s4.portablesubmarines.com:443"
+      - "JMS-607813@c22s1.portablesubmarines.com:8697"
+      - "JMS-607813@c22s2.portablesubmarines.com:8697"
+      - "JMS-607813@c22s3.portablesubmarines.com:443"
+      - "JMS-607813@c22s5.portablesubmarines.com:443"
+      - "JMS-607813@c22s801.portablesubmarines.com:443"
 
 # ==================== 规则（重点防循环） ====================
 rules:
-  # 1. v2ray 自身出站必须直连（防止被 TUN 再次代理）
+  # 1. JMS 节点与代理内核自身出站必须直连（防止被 TUN 再次代理）
+  - DOMAIN-SUFFIX,portablesubmarines.com,DIRECT,no-resolve
+  - IP-CIDR,67.230.171.47/32,DIRECT,no-resolve
+  - IP-CIDR,23.106.128.132/32,DIRECT,no-resolve
+  - IP-CIDR,104.245.103.12/32,DIRECT,no-resolve
   - PROCESS-NAME,v2ray,DIRECT
+  - PROCESS-NAME,xray,DIRECT
 
   # 2. 本地回环 + 局域网 必须直连（防自循环）
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
@@ -67,12 +148,7 @@ rules:
   # 3. Clash TUN 虚拟 IP 段直连（非常重要！）
   - IP-CIDR,198.18.0.0/15,DIRECT,no-resolve
 
-  # 4. v2ray 服务器域名保留为直连兜底
-  - DOMAIN-SUFFIX,portablesubmarines.com,DIRECT,no-resolve
-  # 如果你知道服务器的真实 IP，也可以加：
-  # - IP-CIDR,你的服务器真实IP/32,DIRECT,no-resolve
-
-  # 中国大陆网络直连
+  # 4. 中国大陆网络直连
   - DOMAIN-SUFFIX,cn,DIRECT
   - GEOSITE,CN,DIRECT
   - GEOIP,CN,DIRECT
