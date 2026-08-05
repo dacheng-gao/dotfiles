@@ -48,7 +48,7 @@ proxies:
     port: 8224
   - name: "JMS@c22s3"
     type: vless
-    server: "67.230.171.47"
+    server: "c22s3.portablesubmarines.com"
     port: 443
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"
@@ -62,7 +62,7 @@ proxies:
       short-id: "051f20c2344a2dfd"
   - name: "JMS@c22s4"
     type: vless
-    server: "23.106.128.132"
+    server: "c22s4.portablesubmarines.com"
     port: 443
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"
@@ -76,7 +76,7 @@ proxies:
       short-id: "051f20c2344a2dfd"
   - name: "JMS@c22s5"
     type: vless
-    server: "104.245.103.12"
+    server: "c22s5.portablesubmarines.com"
     port: 443
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"
@@ -90,7 +90,7 @@ proxies:
       short-id: "051f20c2344a2dfd"
   - name: "JMS@c22s801"
     type: vless
-    server: "144.34.169.162"
+    server: "c22s801.portablesubmarines.com"
     port: 443
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"

@@ -7,21 +7,21 @@ ipv6: false
 proxies:
   - name: "JMS-607813@c22s1.portablesubmarines.com:8697"
     type: ss
-    server: "144.34.185.144"
+    server: "144.34.182.55"
     port: 8697
     cipher: "aes-256-gcm"
     password: "Rr9zCQo2B3aGuALw"
     udp: true
   - name: "JMS-607813@c22s2.portablesubmarines.com:8697"
     type: ss
-    server: "104.225.239.197"
+    server: "104.225.233.210"
     port: 8697
     cipher: "aes-256-gcm"
     password: "Rr9zCQo2B3aGuALw"
     udp: true
   - name: "JMS-607813@c22s3.portablesubmarines.com:443"
     type: vless
-    server: "67.230.171.47"
+    server: "95.169.20.165"
     port: 443
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"
@@ -35,7 +35,7 @@ proxies:
       short-id: "051f20c2344a2dfd"
   - name: "JMS-607813@c22s4.portablesubmarines.com:443"
     type: vless
-    server: "23.106.128.132"
+    server: "45.78.55.90"
     port: 443
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"
