@@ -1,5 +1,7 @@
 window-decoration = auto
-font-family = "Iosevka Fixed"
+font-family = "Iosevka Fixed SS14"
+#font-family = "IoskeleyMonoNL Nerd Font SemiCondensed"
+font-family = "Sarasa Mono SC"
 font-size = 14
 adjust-cell-height = 10%
 shell-integration = detect
