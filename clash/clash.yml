@@ -137,10 +137,12 @@ rules:
   - GEOSITE,CN,DIRECT
   - GEOIP,CN,DIRECT
 
-  # Halcrow 公司专线直连
-  - IP-CIDR,43.128.21.87/32,DIRECT,no-resolve # 公司海南专线
+  # 以下网络走 Halcrow 公司专线直连（公司设置了网络安全策略）
+  - IP-CIDR,43.128.21.87/32,DIRECT,no-resolve # 公司专线: 海南
   - DOMAIN,weareworldteam.1password.com,DIRECT # 1password
   - DOMAIN,ai.arcadedevhouse.com,DIRECT,no-resolve # sub2api 服务
+  - DOMAIN,shiftly.halcrow.com.au,DIRECT,no-resolve # shiftly 上班打卡
+  - DOMAIN,shiftly-staging.arcadedevhouse.com,DIRECT,no-resolve # shiftly staging 环境
   - IP-CIDR,34.151.93.112/32,DIRECT,no-resolve # rwa 项目 staging 环境访问地址
   - IP-CIDR,35.213.251.225/32,DIRECT,no-resolve # rwa production web server
   - IP-CIDR,35.244.114.46/32,DIRECT,no-resolve # rwa production data server
