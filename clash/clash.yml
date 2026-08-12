@@ -50,6 +50,8 @@ proxies:
     type: vless
     server: "c22s3.portablesubmarines.com"
     port: 443
+    udp: true
+    packet-encoding: xudp
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"
     encryption: ""
@@ -64,6 +66,8 @@ proxies:
     type: vless
     server: "c22s4.portablesubmarines.com"
     port: 443
+    udp: true
+    packet-encoding: xudp
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"
     encryption: ""
@@ -78,6 +82,8 @@ proxies:
     type: vless
     server: "c22s5.portablesubmarines.com"
     port: 443
+    udp: true
+    packet-encoding: xudp
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"
     encryption: ""
@@ -92,6 +98,8 @@ proxies:
     type: vless
     server: "c22s801.portablesubmarines.com"
     port: 443
+    udp: true
+    packet-encoding: xudp
     uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
     flow: "xtls-rprx-vision"
     encryption: ""
