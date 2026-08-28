@@ -3,7 +3,7 @@ font-family = "Iosevka Fixed SS14"
 #font-family = "IoskeleyMonoNL Nerd Font SemiCondensed"
 font-family = "Sarasa Mono SC"
 font-size = 15
-adjust-cell-height = 10%
+adjust-cell-height = 20%
 shell-integration = detect
 shell-integration-features = no-cursor,ssh-env,ssh-terminfo,path
 cursor-style = block
@@ -12,3 +12,4 @@ cursor-click-to-move = true
 mouse-hide-while-typing = true
 
 theme = "Flexoki Light"
+macos-titlebar-style = tabs
