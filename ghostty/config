@@ -1,9 +1,8 @@
 window-decoration = auto
 font-family = "Iosevka Fixed SS14"
-#font-family = "IoskeleyMonoNL Nerd Font SemiCondensed"
-font-family = "Sarasa Mono SC"
+font-family = "Sarasa Fixed SC"
 font-size = 15
-adjust-cell-height = 20%
+#adjust-cell-height = 10%
 shell-integration = detect
 shell-integration-features = no-cursor,ssh-env,ssh-terminfo,path
 cursor-style = block
