@@ -110,6 +110,22 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
+  - name: "JMS@c6s2"
+    type: vless
+    server: "c6s2.portablesubmarines.com"
+    port: 443
+    udp: true
+    packet-encoding: xudp
+    uuid: "4a046b31-2c3c-4c20-8f08-dfb441b6cb41"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
   - name: "JMS@c6s3"
     type: vless
     server: "c6s3.portablesubmarines.com"
@@ -180,12 +196,13 @@ proxy-groups:
   - name: "GLOBAL"
     type: select
     proxies:
-      - "JMS@c22s4"
       - "JMS@c22s3"
+      - "JMS@c22s4"
       - "JMS@c22s5"
       - "JMS@c22s801"
-      - "JMS@c6s4"
+      - "JMS@c6s2"
       - "JMS@c6s3"
+      - "JMS@c6s4"
       - "JMS@c6s5"
       - "JMS@c6s801"
 
