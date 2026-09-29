@@ -246,6 +246,7 @@ rules:
   - DOMAIN-REGEX,nmhg-datalakehouse-db-server,DIRECT # 域名通过正则匹配 nmhg-datalakehouse-db-server
   - DOMAIN-REGEX,dailytakings,DIRECT # 域名通过正则匹配 dailytakings (DTS) 系统
   - DOMAIN,sonnel.arcadedevhouse.com,DIRECT # 域名精确匹配 sonnel.arcadedevhouse.com UAT 环境
+  - IP-CIDR,52.62.127.126/32,DIRECT,no-resolve # ssh sonnel-prod
 
   # 5. 所有其他流量走 GLOBAL
   - MATCH,GLOBAL
