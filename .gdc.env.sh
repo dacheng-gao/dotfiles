@@ -38,92 +38,20 @@ if [[ -d /opt/homebrew/bin ]]; then
   export PATH=/opt/homebrew/bin:$PATH
 fi
 
-# Add composer global vendor bin for linux
-if [[ -d $HOME/.config/composer/vendor/bin ]]; then
-  export PATH=$HOME/.config/composer/vendor/bin:$PATH
-fi
-# Add composer global vendor bin for macOS
-if [[ -d $HOME/.composer/vendor/bin ]]; then
-  export PATH=$HOME/.composer/vendor/bin:$PATH
+# Add JDK and JAVA_HOME
+if [[ -d /opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home ]]; then
+  export JAVA_HOME=/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home
+  export PATH=$JAVA_HOME:$PATH
 fi
 
-# Add dotnet for home
-if [[ -d $HOME/dotnet ]]; then
-  export DOTNET_ROOT=$HOME/dotnet
-  export PATH=$HOME/dotnet:$PATH
-fi
 # Add dotnet tools
 if [[ -d $HOME/.dotnet/tools ]]; then
   export PATH=$HOME/.dotnet/tools:$PATH
 fi
 
-# Add flutter
-if [[ -d $HOME/flutter ]]; then
-  export FLUTTER_ROOT=$HOME/flutter
-  export PATH=$HOME/flutter/bin:$PATH
-fi
-
 # Add Dart pub global tools (patrol_cli, etc.)
 if [[ -d $HOME/.pub-cache/bin ]]; then
   export PATH=$HOME/.pub-cache/bin:$PATH
-fi
-
-# Add go for /usr/local
-if [[ -d /usr/local/go/bin ]]; then
-  export GO_HOME=/usr/local/go
-  export PATH=$GO_HOME/bin:$PATH
-fi
-# Add go for /opt
-if [[ -d /opt/go/bin ]]; then
-  export GO_HOME=/opt/go
-  export PATH=$GO_HOME/bin:$PATH
-fi
-# Set GOPATH
-if [[ -d $HOME/go ]]; then
-  export GOPATH=$HOME/go
-  export PATH=$GOPATH/bin:$PATH
-fi
-
-# Add cargo
-if [[ -d $HOME/.cargo/bin ]]; then
-  export PATH=$HOME/.cargo/bin:$PATH
-fi
-
-# Add JDK for /opt
-if [[ -d /opt/jdk ]]; then
-  export JAVA_HOME=/opt/jdk
-  export PATH=$JAVA_HOME/bin:$PATH
-fi
-
-# Add nodejs for /opt
-if [[ -d /opt/node ]]; then
-  export PATH=/opt/node/bin:$PATH
-fi
-
-# Add jaeger tracing for /usr/local
-if [[ -d /usr/local/jaeger ]]; then
-  export PATH=/usr/local/jaeger:$PATH
-fi
-# Add jaeger tracing for /opt
-if [[ -d /opt/jaeger ]]; then
-  export PATH=/opt/jaeger:$PATH
-fi
-
-# Overwrite default install for macOS (Intel chip)
-if [[ `uname -s` = 'Darwin' ]]; then
-  if [[ -d /usr/local/opt/bison ]]; then
-    export PATH=/usr/local/opt/bison/bin:$PATH
-  fi
-  if [[ -d /usr/local/opt/curl ]]; then
-    export PATH=/usr/local/opt/curl/bin:$PATH
-  fi
-  if [[ -d /usr/local/opt/openjdk ]]; then
-    export JAVA_HOME=/usr/local/opt/openjdk
-    export PATH=$JAVA_HOME/bin:$PATH
-  fi
-  if [[ -d /usr/local/opt/ruby ]]; then
-    export PATH=/usr/local/opt/ruby/bin:$PATH
-  fi
 fi
 
 # Unset http proxy for sure on bootstrap and use them as need
