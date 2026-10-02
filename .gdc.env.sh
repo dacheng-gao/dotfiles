@@ -39,9 +39,9 @@ if [[ -d /opt/homebrew/bin ]]; then
 fi
 
 # Add JDK and JAVA_HOME
-if [[ -d /opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home ]]; then
-  export JAVA_HOME=/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home
-  export PATH=$JAVA_HOME:$PATH
+if [[ -d /opt/homebrew/opt/openjdk@25/libexec/openjdk.jdk/Contents/Home ]]; then
+  export JAVA_HOME=/opt/homebrew/opt/openjdk@25/libexec/openjdk.jdk/Contents/Home
+  export PATH=$JAVA_HOME/bin:$PATH
 fi
 
 # Add dotnet tools
