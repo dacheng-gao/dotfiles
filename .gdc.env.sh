@@ -44,6 +44,12 @@ if [[ -d /opt/homebrew/opt/openjdk@25/libexec/openjdk.jdk/Contents/Home ]]; then
   export PATH=$JAVA_HOME/bin:$PATH
 fi
 
+# Add Android sdk
+if [[ -d $HOME/Library/Android/sdk ]]; then
+  export ANDROID_HOME=$HOME/Library/Android/sdk
+  export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulators:$ANDROID_HOME/cmdline-tools/22.0/bin:$PATH
+fi
+
 # Add dotnet tools
 if [[ -d $HOME/.dotnet/tools ]]; then
   export PATH=$HOME/.dotnet/tools:$PATH
