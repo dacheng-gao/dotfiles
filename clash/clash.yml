@@ -30,8 +30,8 @@ dns:
     - 119.29.29.29
     - 223.5.5.5
   nameserver:                        # 代理流量使用海外 DoH
-    - "https://1.1.1.1/dns-query#GLOBAL"
-    - "https://dns.google/dns-query#GLOBAL"
+    - "https://1.1.1.1/dns-query#PROXY"
+    - "https://dns.google/dns-query#PROXY"
   "direct-nameserver":              # 直连流量使用国内 DoH
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
@@ -42,74 +42,6 @@ dns:
 
 # ==================== 代理节点 ====================
 proxies:
-  - name: "v2ray"
-    type: socks5
-    server: 127.0.0.1
-    port: 8224
-  - name: "JMS@c22s3"
-    type: vless
-    server: "c22s3.portablesubmarines.com"
-    port: 443
-    udp: true
-    packet-encoding: xudp
-    uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
-    flow: "xtls-rprx-vision"
-    encryption: ""
-    network: "tcp"
-    tls: true
-    servername: "portal.citygrainla.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
-      short-id: "051f20c2344a2dfd"
-  - name: "JMS@c22s4"
-    type: vless
-    server: "c22s4.portablesubmarines.com"
-    port: 443
-    udp: true
-    packet-encoding: xudp
-    uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
-    flow: "xtls-rprx-vision"
-    encryption: ""
-    network: "tcp"
-    tls: true
-    servername: "portal.citygrainla.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
-      short-id: "051f20c2344a2dfd"
-  - name: "JMS@c22s5"
-    type: vless
-    server: "c22s5.portablesubmarines.com"
-    port: 443
-    udp: true
-    packet-encoding: xudp
-    uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
-    flow: "xtls-rprx-vision"
-    encryption: ""
-    network: "tcp"
-    tls: true
-    servername: "portal.citygrainla.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
-      short-id: "051f20c2344a2dfd"
-  - name: "JMS@c22s801"
-    type: vless
-    server: "c22s801.portablesubmarines.com"
-    port: 443
-    udp: true
-    packet-encoding: xudp
-    uuid: "c522f0f5-73b9-435f-8a3f-f88d9f1cf0ad"
-    flow: "xtls-rprx-vision"
-    encryption: ""
-    network: "tcp"
-    tls: true
-    servername: "portal.citygrainla.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
-      short-id: "051f20c2344a2dfd"
   - name: "JMS@c6s2"
     type: vless
     server: "c6s2.portablesubmarines.com"
@@ -190,21 +122,102 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
+  - name: "JMS@c85s2"
+    type: vless
+    server: "c85s2.portablesubmarines.com"
+    port: 443
+    udp: true
+    packet-encoding: xudp
+    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
+  - name: "JMS@c85s3"
+    type: vless
+    server: "c85s3.portablesubmarines.com"
+    port: 443
+    udp: true
+    packet-encoding: xudp
+    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
+  - name: "JMS@c85s4"
+    type: vless
+    server: "c85s4.portablesubmarines.com"
+    port: 443
+    udp: true
+    packet-encoding: xudp
+    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
+  - name: "JMS@c85s5"
+    type: vless
+    server: "c85s5.portablesubmarines.com"
+    port: 443
+    udp: true
+    packet-encoding: xudp
+    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
+  - name: "JMS@c85s801"
+    type: vless
+    server: "c85s801.portablesubmarines.com"
+    port: 443
+    udp: true
+    packet-encoding: xudp
+    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    flow: "xtls-rprx-vision"
+    encryption: ""
+    network: "tcp"
+    tls: true
+    servername: "portal.citygrainla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
+      short-id: "051f20c2344a2dfd"
 
 # ==================== 策略组 ====================
 proxy-groups:
-  - name: "GLOBAL"
+  - name: "PROXY"
     type: select
     proxies:
-      - "JMS@c22s3"
-      - "JMS@c22s4"
-      - "JMS@c22s5"
-      - "JMS@c22s801"
       - "JMS@c6s2"
       - "JMS@c6s3"
       - "JMS@c6s4"
       - "JMS@c6s5"
       - "JMS@c6s801"
+      - "JMS@c85s2"
+      - "JMS@c85s3"
+      - "JMS@c85s4"
+      - "JMS@c85s5"
+      - "JMS@c85s801"
 
 # ==================== 规则（重点防循环） ====================
 rules:
@@ -230,15 +243,17 @@ rules:
   - GEOSITE,CN,DIRECT
   - GEOIP,CN,DIRECT
 
-  # Halcrow 公司网络直连
-  - IP-CIDR,43.128.21.87/32,DIRECT,no-resolve # 公司专线网络
-  - DOMAIN,weareworldteam.1password.com,DIRECT # 1password
-  - DOMAIN,ai.arcadedevhouse.com,DIRECT,no-resolve # sub2api
-  - DOMAIN,shiftly.halcrow.com.au,DIRECT,no-resolve # shiftly 上班打卡
+  # Halcrow 公司内部服务要求使用公司专线网络直连
+  - IP-CIDR,43.128.21.87/32,DIRECT,no-resolve # 公司香港专线 IP
+  - DOMAIN,weareworldteam.1password.com,DIRECT # 1password 密码服务
+  - DOMAIN,ai.arcadedevhouse.com,DIRECT,no-resolve # sub2api 中转服务
+  - DOMAIN,shiftly.halcrow.com.au,DIRECT,no-resolve # shiftly 考勤
+  # Halcrow RWA 项目要求直连：生产环境和 UAT 环境的 Web+Data 服务器
   - IP-CIDR,34.151.93.112/32,DIRECT,no-resolve # rwa staging web+data server
   - IP-CIDR,35.213.251.225/32,DIRECT,no-resolve # rwa production web server
   - IP-CIDR,35.244.114.46/32,DIRECT,no-resolve # rwa production data server
   - DOMAIN,rwasuite.com,DIRECT,no-resolve # rwa production website
+  # Halcrow Mainland 项目
   - IP-CIDR,13.239.162.82/32,DIRECT,no-resolve # Mainland UAT SQL Server
   # Halcrow SONNEL 项目要求直连：Microsoft SSO 登录有 IP 限制
   - DOMAIN-REGEX,microsoft,DIRECT # 域名通过正则匹配 microsoft
@@ -246,7 +261,8 @@ rules:
   - DOMAIN-REGEX,nmhg-datalakehouse-db-server,DIRECT # 域名通过正则匹配 nmhg-datalakehouse-db-server
   - DOMAIN-REGEX,dailytakings,DIRECT # 域名通过正则匹配 dailytakings (DTS) 系统
   - DOMAIN,sonnel.arcadedevhouse.com,DIRECT # 域名精确匹配 sonnel.arcadedevhouse.com UAT 环境
+  - IP-CIDR,13.211.94.49/32,DIRECT,no-resolve # ssh sonnel-staging
   - IP-CIDR,52.62.127.126/32,DIRECT,no-resolve # ssh sonnel-prod
 
-  # 5. 所有其他流量走 GLOBAL
-  - MATCH,GLOBAL
+  # 5. 所有其他流量走 PROXY
+  - MATCH,PROXY
