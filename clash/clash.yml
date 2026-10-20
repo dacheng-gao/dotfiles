@@ -238,6 +238,9 @@ rules:
   # 3. Clash TUN 虚拟 IP 段直连（非常重要！）
   - IP-CIDR,198.18.0.0/15,DIRECT,no-resolve
 
+  # 在匹配中国大陆之前，优先走 PROXY 的规则
+  - DOMAIN,ai.gaodacheng.com,PROXY,no-resolve # sub2api 日本节点
+
   # 4. 中国大陆网络直连
   - DOMAIN-SUFFIX,cn,DIRECT
   - GEOSITE,CN,DIRECT
