@@ -9,6 +9,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="false"
 plugins=(dotnet)
 source $ZSH/oh-my-zsh.sh
 
+# Let Oh My Zsh show user, host and directory while idle, and commands while running.
+ZSH_THEME_TERM_TITLE_IDLE='%n@%m %~'
+
 # load my own shell script entry
 [ -f ~/.gdc.sh ] && source ~/.gdc.sh
 
