@@ -1,13 +1,10 @@
 theme = "Flexoki Light"
-window-decoration = auto
-macos-titlebar-style = tabs
 window-title-font-family = "Iosevka Fixed SS14"
 window-padding-balance = true
 
 font-family = "Iosevka Fixed SS14"
 font-family = "Sarasa Fixed SC"
 font-size = 16
-#adjust-cell-height = 10%
 
 working-directory = home
 window-inherit-working-directory = false
