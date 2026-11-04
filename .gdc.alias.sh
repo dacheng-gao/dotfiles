@@ -10,10 +10,13 @@ alias vi="nvim"
 alias less="less -R"
 
 if command -v brew >/dev/null 2>&1; then
-  if brew list --formula zig@0.16 >/dev/null 2>&1; then
-    alias zig16="$(brew --prefix zig@0.16)/bin/zig"
+  _zig16="$(brew --prefix zig@0.16)/bin/zig"
+  if [ -x "$_zig16" ]; then
+    alias zig16="$_zig16"
   fi
-  if brew list --formula zig >/dev/null 2>&1; then
-    alias zig17="$(brew --prefix zig)/bin/zig"
+  _zig17="$(brew --prefix zig)/bin/zig"
+  if [ -x "$_zig17" ]; then
+    alias zig17="$_zig17"
   fi
+  unset _zig16 _zig17
 fi
