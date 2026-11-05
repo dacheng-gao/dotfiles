@@ -42,13 +42,13 @@ dns:
 
 # ==================== 代理节点 ====================
 proxies:
-  - name: "JMS@c85s2"
+  - name: "JMS@c51s2"
     type: vless
-    server: "c85s2.portablesubmarines.com"
+    server: "104.160.44.254"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -58,13 +58,13 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS@c85s3"
+  - name: "JMS@c51s3"
     type: vless
-    server: "c85s3.portablesubmarines.com"
+    server: "144.168.57.96"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -74,13 +74,13 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS@c85s4"
+  - name: "JMS@c51s4"
     type: vless
-    server: "c85s4.portablesubmarines.com"
+    server: "45.78.52.26"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -90,13 +90,13 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS@c85s5"
+  - name: "JMS@c51s5"
     type: vless
-    server: "c85s5.portablesubmarines.com"
+    server: "104.245.102.26"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -106,13 +106,13 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS@c85s801"
+  - name: "JMS@c51s801"
     type: vless
-    server: "c85s801.portablesubmarines.com"
+    server: "174.137.53.15"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "4dbf1ade-33f1-40dc-9273-e51babd570fe"
+    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -128,11 +128,11 @@ proxy-groups:
   - name: "PROXY"
     type: select
     proxies:
-      - "JMS@c85s2"
-      - "JMS@c85s3"
-      - "JMS@c85s4"
-      - "JMS@c85s5"
-      - "JMS@c85s801"
+      - "JMS@c51s2"
+      - "JMS@c51s3"
+      - "JMS@c51s4"
+      - "JMS@c51s5"
+      - "JMS@c51s801"
 
 # ==================== 规则（重点防循环） ====================
 rules:
@@ -174,13 +174,15 @@ rules:
   # Halcrow Mainland 项目
   - IP-CIDR,13.239.162.82/32,DIRECT,no-resolve # Mainland UAT SQL Server
   # Halcrow SONNEL 项目要求直连：Microsoft SSO 登录有 IP 限制
-  - DOMAIN-REGEX,microsoft,DIRECT # 域名通过正则匹配 microsoft
-  - DOMAIN-REGEX,sharepoint,DIRECT # 域名通过正则匹配 sharepoint
-  - DOMAIN-REGEX,nmhg-datalakehouse-db-server,DIRECT # 域名通过正则匹配 nmhg-datalakehouse-db-server
-  - DOMAIN-REGEX,dailytakings,DIRECT # 域名通过正则匹配 dailytakings (DTS) 系统
+  - DOMAIN-REGEX,microsoft,DIRECT # 域名通过正则匹配 microsoft（覆盖太广，会误伤其他服务）
+  - DOMAIN-REGEX,sharepoint,DIRECT # 域名通过正则匹配 sharepoint（覆盖太广，会误伤其他服务）
+  - DOMAIN,nmhg-datalakehouse-db-server.database.windows.net,DIRECT # azure SQL Server
+  - DOMAIN,dailytakings.sonnel.com.au,DIRECT # dailytakings (DTS) 系统 Production 环境
   - DOMAIN,sonnel.arcadedevhouse.com,DIRECT # 域名精确匹配 sonnel.arcadedevhouse.com UAT 环境
   - IP-CIDR,13.211.94.49/32,DIRECT,no-resolve # ssh sonnel-staging
   - IP-CIDR,52.62.127.126/32,DIRECT,no-resolve # ssh sonnel-prod
+  - DOMAIN,api.fileactive.anz.com,DIRECT # ANZ API
+  - DOMAIN,api.fileactive.online.anz.com,DIRECT # ANZ API
 
   # 5. 所有其他流量走 PROXY
   - MATCH,PROXY
