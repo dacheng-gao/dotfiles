@@ -42,13 +42,13 @@ dns:
 
 # ==================== 代理节点 ====================
 proxies:
-  - name: "JMS@c51s2"
+  - name: "JMS@c68s2"
     type: vless
-    server: "104.160.44.254"
+    server: "c68s2.portablesubmarines.com"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -58,13 +58,13 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS@c51s3"
+  - name: "JMS@c68s3"
     type: vless
-    server: "144.168.57.96"
+    server: "c68s3.portablesubmarines.com"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -74,13 +74,13 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS@c51s4"
+  - name: "JMS@c68s4"
     type: vless
-    server: "45.78.52.26"
+    server: "c68s4.portablesubmarines.com"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -90,13 +90,13 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS@c51s5"
+  - name: "JMS@c68s5"
     type: vless
-    server: "104.245.102.26"
+    server: "c68s5.portablesubmarines.com"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -106,13 +106,13 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS@c51s801"
+  - name: "JMS@c68s801"
     type: vless
-    server: "174.137.53.15"
+    server: "c68s801.portablesubmarines.com"
     port: 443
     udp: true
     packet-encoding: xudp
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -128,11 +128,11 @@ proxy-groups:
   - name: "PROXY"
     type: select
     proxies:
-      - "JMS@c51s2"
-      - "JMS@c51s3"
-      - "JMS@c51s4"
-      - "JMS@c51s5"
-      - "JMS@c51s801"
+      - "JMS@c68s2"
+      - "JMS@c68s3"
+      - "JMS@c68s4"
+      - "JMS@c68s5"
+      - "JMS@c68s801"
 
 # ==================== 规则（重点防循环） ====================
 rules:

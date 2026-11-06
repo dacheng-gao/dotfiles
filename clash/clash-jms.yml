@@ -5,18 +5,18 @@ log-level: info
 ipv6: false
 
 proxies:
-  - name: "JMS-1493842@c51s1.portablesubmarines.com:16976"
+  - name: "JMS-1494703@c68s1.portablesubmarines.com:17210"
     type: ss
-    server: "172.96.18.173"
-    port: 16976
+    server: "104.36.64.247"
+    port: 17210
     cipher: "aes-256-gcm"
-    password: "mBAXGVQNxExjbX7A"
+    password: "hfPwqWygXEagZqwV"
     udp: true
-  - name: "JMS-1493842@c51s2.portablesubmarines.com:443"
+  - name: "JMS-1494703@c68s2.portablesubmarines.com:443"
     type: vless
-    server: "104.160.44.254"
+    server: "176.122.188.184"
     port: 443
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -26,11 +26,11 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS-1493842@c51s3.portablesubmarines.com:443"
+  - name: "JMS-1494703@c68s3.portablesubmarines.com:443"
     type: vless
-    server: "144.168.57.96"
+    server: "198.181.33.77"
     port: 443
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -40,11 +40,11 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS-1493842@c51s4.portablesubmarines.com:443"
+  - name: "JMS-1494703@c68s4.portablesubmarines.com:443"
     type: vless
-    server: "45.78.52.26"
+    server: "178.157.61.177"
     port: 443
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -54,11 +54,11 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS-1493842@c51s5.portablesubmarines.com:443"
+  - name: "JMS-1494703@c68s5.portablesubmarines.com:443"
     type: vless
-    server: "104.245.102.26"
+    server: "104.245.97.126"
     port: 443
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -68,11 +68,11 @@ proxies:
     reality-opts:
       public-key: "BlSccfT5tvDIOS7v9VaPd0ulUNhUdvlMjGiNzDNDUHE"
       short-id: "051f20c2344a2dfd"
-  - name: "JMS-1493842@c51s801.portablesubmarines.com:443"
+  - name: "JMS-1494703@c68s801.portablesubmarines.com:443"
     type: vless
-    server: "174.137.53.15"
+    server: "c68s801.portablesubmarines.com"
     port: 443
-    uuid: "0a3432cd-74b8-413a-896d-f51492b030bc"
+    uuid: "e60f4255-3cf2-483b-b6d3-3e302f431ef3"
     flow: "xtls-rprx-vision"
     encryption: ""
     network: "tcp"
@@ -88,22 +88,22 @@ proxy-groups:
     type: select
     proxies:
       - "JMS Auto"
-      - "JMS-1493842@c51s1.portablesubmarines.com:16976"
-      - "JMS-1493842@c51s2.portablesubmarines.com:443"
-      - "JMS-1493842@c51s3.portablesubmarines.com:443"
-      - "JMS-1493842@c51s4.portablesubmarines.com:443"
-      - "JMS-1493842@c51s5.portablesubmarines.com:443"
-      - "JMS-1493842@c51s801.portablesubmarines.com:443"
+      - "JMS-1494703@c68s1.portablesubmarines.com:17210"
+      - "JMS-1494703@c68s2.portablesubmarines.com:443"
+      - "JMS-1494703@c68s3.portablesubmarines.com:443"
+      - "JMS-1494703@c68s4.portablesubmarines.com:443"
+      - "JMS-1494703@c68s5.portablesubmarines.com:443"
+      - "JMS-1494703@c68s801.portablesubmarines.com:443"
       - DIRECT
   - name: "JMS Auto"
     type: url-test
     proxies:
-      - "JMS-1493842@c51s1.portablesubmarines.com:16976"
-      - "JMS-1493842@c51s2.portablesubmarines.com:443"
-      - "JMS-1493842@c51s3.portablesubmarines.com:443"
-      - "JMS-1493842@c51s4.portablesubmarines.com:443"
-      - "JMS-1493842@c51s5.portablesubmarines.com:443"
-      - "JMS-1493842@c51s801.portablesubmarines.com:443"
+      - "JMS-1494703@c68s1.portablesubmarines.com:17210"
+      - "JMS-1494703@c68s2.portablesubmarines.com:443"
+      - "JMS-1494703@c68s3.portablesubmarines.com:443"
+      - "JMS-1494703@c68s4.portablesubmarines.com:443"
+      - "JMS-1494703@c68s5.portablesubmarines.com:443"
+      - "JMS-1494703@c68s801.portablesubmarines.com:443"
     url: "https://www.gstatic.com/generate_204"
     interval: 300
     tolerance: 50
